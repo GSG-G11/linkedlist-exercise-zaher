@@ -19,8 +19,8 @@ SinglyLinkedList.prototype.push = function(val) {
    let newNode = new Node(val);
 
    if(this.head === null){
-    this.head = newNode;
-    this.tail = this.head;
+        this.head = newNode;
+        this.tail = this.head;
    }else{
        this.tail.next = newNode;
        this.tail = newNode;
@@ -40,7 +40,6 @@ SinglyLinkedList.prototype.unshift = function(val){
     }else{
         newNode.next = this.head;
         this.head = newNode;
-        
     }
 
     this.length++;
@@ -137,9 +136,9 @@ SinglyLinkedList.prototype.remove = function(index){
     if(this.length === 1){
         removedNode = this.shift();
     }else{
-        let deletedNode = this.getNode(index - 1);
-        removedNode = deletedNode.next;
-        deletedNode.next = deletedNode.next.next;
+        let previousNode = this.getNode(index - 1);
+        removedNode = previousNode.next;
+        previousNode.next = previousNode.next.next;
         removedNode.next = null;
     }
 
