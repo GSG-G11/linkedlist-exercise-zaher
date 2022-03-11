@@ -159,4 +159,21 @@ SinglyLinkedList.prototype.pop = function () {
   return deletedNode.val;
 };
 
-SinglyLinkedList.prototype.reverse = function () {};
+SinglyLinkedList.prototype.reverse = function () {
+  let node = this.head;
+  let previousNode = null;
+
+  this.tail = this.head;
+
+  while (node) {
+    let tempNode = node.next;
+
+    node.next = previousNode;
+
+    previousNode = node;
+
+    node = tempNode;
+  }
+
+  this.head = previousNode;
+};
