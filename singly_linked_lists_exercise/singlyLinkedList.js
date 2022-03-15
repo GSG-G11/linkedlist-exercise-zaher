@@ -147,13 +147,13 @@ SinglyLinkedList.prototype.pop = function () {
     return undefined;
   }
 
-  let previusNode = this.getNode(this.length - 2);
+  let previousNode = this.getNode(this.length - 2);
 
-  let deletedNode = previusNode.next;
-  previusNode.next = deletedNode.next;
+  let deletedNode = previousNode.next;
+  previousNode.next = deletedNode.next;
   deletedNode.next = null;
 
-  this.tail = previusNode;
+  this.tail = previousNode;
 
   this.length--;
   return deletedNode.val;
@@ -177,3 +177,6 @@ SinglyLinkedList.prototype.reverse = function () {
 
   this.head = previousNode;
 };
+
+
+module.exports = SinglyLinkedList;
