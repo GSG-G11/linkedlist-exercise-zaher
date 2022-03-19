@@ -15,38 +15,6 @@ function SinglyLinkedList(array = []) {
   }
 }
 
-// SinglyLinkedList.prototype.push = function (val) {
-//   const node = new Node(val);
-
-//   if (this.length === 0) {
-//     this.head = node;
-//     this.tail = this.head;
-//   } else {
-//     this.tail.next = node;
-//     this.tail = node;
-//   } 
-
-//   this.length++;
-//   return this;
-// }
-
-
-// SinglyLinkedList.prototype.unshift = function (val) {
-//   const node = new Node(val);
-
-//   if (this.length === 0) {
-//     this.head = node;
-//     this.tail = node;
-//   } else {
-//     node.next = this.head;
-//     this.head = node;
-//   }
-
-//   this.length++;
-//   return this;
-// }
-
-
 SinglyLinkedList.prototype.push = function (val) {
   let newNode = new Node(val);
 
@@ -190,9 +158,6 @@ SinglyLinkedList.prototype.pop = function () {
   this.length--;
   return deletedNode.val;
 };
-
-
-
 
 SinglyLinkedList.prototype.reverse = function () {
   if (this.length === 1) return this;
