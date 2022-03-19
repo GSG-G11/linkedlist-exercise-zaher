@@ -181,36 +181,4 @@ SinglyLinkedList.prototype.reverse = function () {
   return this;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-// SinglyLinkedList.prototype.push = function (val) {};
-
-// SinglyLinkedList.prototype.unshift = function (val) {};
-
-// SinglyLinkedList.prototype.insert = function (index, val) {};
-
-// SinglyLinkedList.prototype.getNode = function (index) {};
-
-// SinglyLinkedList.prototype.get = function (index) {};
-
-// SinglyLinkedList.prototype.set = function (index, val) {};
-
-// SinglyLinkedList.prototype.shift = function () {};
-
-// SinglyLinkedList.prototype.remove = function (index) {};
-
-// SinglyLinkedList.prototype.pop = function () {};
-
-// SinglyLinkedList.prototype.reverse = function () {};
-
 module.exports = SinglyLinkedList;
