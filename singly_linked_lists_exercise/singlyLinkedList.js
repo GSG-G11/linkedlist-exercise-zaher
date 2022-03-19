@@ -9,11 +9,43 @@ function SinglyLinkedList(array = []) {
   this.length = 0;
 
   if (Array.isArray(array)) {
-    array.forEach((el) => {
-      this.push(el);
+    array.forEach((element) => {
+      this.push(element);
     });
   }
 }
+
+// SinglyLinkedList.prototype.push = function (val) {
+//   const node = new Node(val);
+
+//   if (this.length === 0) {
+//     this.head = node;
+//     this.tail = this.head;
+//   } else {
+//     this.tail.next = node;
+//     this.tail = node;
+//   } 
+
+//   this.length++;
+//   return this;
+// }
+
+
+// SinglyLinkedList.prototype.unshift = function (val) {
+//   const node = new Node(val);
+
+//   if (this.length === 0) {
+//     this.head = node;
+//     this.tail = node;
+//   } else {
+//     node.next = this.head;
+//     this.head = node;
+//   }
+
+//   this.length++;
+//   return this;
+// }
+
 
 SinglyLinkedList.prototype.push = function (val) {
   let newNode = new Node(val);
@@ -159,24 +191,61 @@ SinglyLinkedList.prototype.pop = function () {
   return deletedNode.val;
 };
 
+
+
+
 SinglyLinkedList.prototype.reverse = function () {
-  let node = this.head;
-  let previousNode = null;
+  if (this.length === 1) return this;
 
+  let two;
+  let one = two = this.head.next;
+  
   this.tail = this.head;
+  this.tail.next = null;
 
-  while (node) {
-    let tempNode = node.next;
-
-    node.next = previousNode;
-
-    previousNode = node;
-
-    node = tempNode;
+  while (two.next !== null) {
+    two = two.next;
+    one.next = this.head;
+    this.head = one;
+    one = two
   }
 
-  this.head = previousNode;
-};
+  one.next = this.head;
+  this.head = one;
 
+  return this;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// SinglyLinkedList.prototype.push = function (val) {};
+
+// SinglyLinkedList.prototype.unshift = function (val) {};
+
+// SinglyLinkedList.prototype.insert = function (index, val) {};
+
+// SinglyLinkedList.prototype.getNode = function (index) {};
+
+// SinglyLinkedList.prototype.get = function (index) {};
+
+// SinglyLinkedList.prototype.set = function (index, val) {};
+
+// SinglyLinkedList.prototype.shift = function () {};
+
+// SinglyLinkedList.prototype.remove = function (index) {};
+
+// SinglyLinkedList.prototype.pop = function () {};
+
+// SinglyLinkedList.prototype.reverse = function () {};
 
 module.exports = SinglyLinkedList;
